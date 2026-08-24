@@ -1,0 +1,27 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      description: "Convert an API description file between formats (OpenAPI, RAML, WSDL, API Blueprint, Postman Collection, ...)."
+      security: {
+        in: "header"
+        name: "authorization"
+        prefix: ""
+        scheme: "apiKeyAuth"
+        type: "apiKey"
+      }
+      servers: [
+        {
+          url: "https://api.apimatic.io"
+        }
+      ]
+      summary: "Convert an API description file between formats (OpenAPI, RAML, WSDL, API Blueprint, Postman Collection, ...)."
+      title: "APIMatic Transformer API"
+      version: "1.0.0"
+      website: "https://apimatic.io"
+    }
+  }
+}
+

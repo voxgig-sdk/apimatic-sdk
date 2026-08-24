@@ -1,0 +1,18 @@
+# BasicTransformFlow
+
+main: kit: flow: BasicTransformFlow:
+{
+  entity: "transform",
+  kind: "basic",
+  name: "BasicTransformFlow",
+  step: [
+    {
+      input: {
+        ref: "transform_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicTransformFlow"
+}

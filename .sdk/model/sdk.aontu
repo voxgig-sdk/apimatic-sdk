@@ -1,0 +1,44 @@
+
+# Model definitions.
+@"@voxgig/apidef/model/apidef.aon"
+@"@voxgig/sdkgen/model/sdkgen.aon"
+
+
+# SDK Details.
+name: 'apimatic'
+origin: 'voxgig-sdk'
+def: 'apimatic-transform-only.json'
+
+
+# API Information
+@"api/api-info.aon"
+
+
+# SDK Configuration.
+@"config.aon"
+
+
+# SDK Entities
+@"entity/entity-index.aon"
+
+
+# SDK Features.
+@"feature/feature-index.aon"
+ 
+
+# SDK Targets.
+@"target/target-index.aon"
+
+
+# Operation workflows.
+@"flow/flow-index.aon"
+
+
+# adopt: true — fork of the real senecajs repo; keeps its .github/LICENSE
+# etc. instead of generating into an empty folder.
+main: kit: target: 'seneca-provider': output: {
+  path: '../../seneca/apimatic-provider'
+  sdkrel: '../../voxgig-sdk/apimatic-sdk'
+  adopt: true
+}
+

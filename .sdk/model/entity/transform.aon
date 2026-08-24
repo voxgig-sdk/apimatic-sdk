@@ -1,0 +1,73 @@
+# Entity: transform
+
+main: kit: entity: transform: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "downloadUrl"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "fileName"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "format"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "transform"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/transform"
+          parts: [
+            "transform"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

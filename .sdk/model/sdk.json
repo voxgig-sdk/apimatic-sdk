@@ -1,0 +1,460 @@
+{
+  "NAME": "APIMATIC",
+  "Name": "Apimatic",
+  "def": "apimatic-transform-only.json",
+  "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "docs": {},
+      "entity": {
+        "transform": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "downloadUrl",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "fileName",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "format",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "transform",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "kind": "http",
+                  "method": "POST",
+                  "orig": "/transform",
+                  "parts": [
+                    "transform"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            }
+          },
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "target": {
+            "seneca-provider": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicTransformFlow": {
+          "active": true,
+          "entity": "transform",
+          "key$": "BasicTransformFlow",
+          "kind": "basic",
+          "name": "BasicTransformFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "transform_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        }
+      },
+      "info": {
+        "description": "Convert an API description file between formats (OpenAPI, RAML, WSDL, API Blueprint, Postman Collection, ...).",
+        "security": {
+          "in": "header",
+          "name": "authorization",
+          "prefix": "",
+          "scheme": "apiKeyAuth",
+          "type": "apiKey"
+        },
+        "servers": [
+          {
+            "url": "https://api.apimatic.io"
+          }
+        ],
+        "summary": "Convert an API description file between formats (OpenAPI, RAML, WSDL, API Blueprint, Postman Collection, ...).",
+        "title": "APIMatic Transformer API",
+        "version": "1.0.0",
+        "website": "https://apimatic.io"
+      },
+      "option": {},
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "seneca-provider": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@seneca/doc": {
+              "active": true,
+              "kind": "dev",
+              "version": "^8.0.0"
+            },
+            "@seneca/env": {
+              "active": true,
+              "kind": "peer",
+              "version": ">=0.4"
+            },
+            "@seneca/maintain": {
+              "active": true,
+              "kind": "prod",
+              "version": "^0.1.0"
+            },
+            "@seneca/provider": {
+              "active": true,
+              "kind": "peer",
+              "version": ">=4"
+            },
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^24.0.0"
+            },
+            "seneca": {
+              "active": true,
+              "kind": "peer,dev",
+              "version": ">=3||>=4.0.0-rc2"
+            },
+            "seneca-entity": {
+              "active": true,
+              "kind": "peer",
+              "version": ">=26"
+            },
+            "seneca-msg-test": {
+              "active": true,
+              "kind": "dev",
+              "version": "^4.1.0"
+            },
+            "seneca-promisify": {
+              "active": true,
+              "kind": "peer",
+              "version": ">=3"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.4.5"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "apimatic",
+            "package": "",
+            "path": ""
+          },
+          "name": "seneca-provider",
+          "origname": "",
+          "output": {
+            "adopt": true,
+            "path": "../../seneca/apimatic-provider",
+            "repo": "",
+            "sdkrel": "../../voxgig-sdk/apimatic-sdk"
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "title": "Seneca Provider"
+        },
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "dotenv": {
+              "active": true,
+              "kind": "dev",
+              "version": "^17.4.2"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "apimatic",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": false
+        }
+      }
+    }
+  },
+  "name": "apimatic",
+  "name-": "apimatic",
+  "name_": "apimatic",
+  "name__orig": "apimatic",
+  "origin": "voxgig-sdk"
+}

@@ -1,0 +1,69 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "APIMatic Transformer API",
+    "version": "1.0.0",
+    "description": "Convert an API description file between formats (OpenAPI, RAML, WSDL, API Blueprint, Postman Collection, ...)."
+  },
+  "servers": [
+    { "url": "https://api.apimatic.io" }
+  ],
+  "security": [
+    { "apiKeyAuth": [] }
+  ],
+  "paths": {
+    "/transform": {
+      "post": {
+        "operationId": "createTransformation",
+        "summary": "Convert an API description file to another format",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TransformationInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The transformed API description",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Transformation" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "authorization"
+      }
+    },
+    "schemas": {
+      "TransformationInput": {
+        "type": "object",
+        "required": ["format", "url"],
+        "properties": {
+          "format": { "type": "string" },
+          "url": { "type": "string" },
+          "fileName": { "type": "string" }
+        }
+      },
+      "Transformation": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "format": { "type": "string" },
+          "status": { "type": "string" },
+          "downloadUrl": { "type": "string" }
+        }
+      }
+    }
+  }
+}
