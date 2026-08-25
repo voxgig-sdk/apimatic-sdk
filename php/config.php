@@ -42,6 +42,7 @@ class ApimaticConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [

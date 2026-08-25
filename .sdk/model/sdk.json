@@ -1,15 +1,6 @@
 {
-  "NAME": "APIMATIC",
-  "Name": "Apimatic",
   "def": "apimatic-transform-only.json",
   "main": {
-    "api": {
-      "entity": {},
-      "guide": {}
-    },
-    "custom": {
-      "plurals": {}
-    },
     "def": {
       "desc": ""
     },
@@ -205,14 +196,12 @@
             "py": {
               "deps": {}
             },
-            "seneca-provider": {
-              "deps": {}
-            },
             "ts": {
               "deps": {}
             }
           },
           "title": "In-memory mock transport for testing without a live server",
+          "transport": "base",
           "version": "0.0.1"
         }
       },
@@ -292,6 +281,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -350,6 +340,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -424,6 +415,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -504,6 +496,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -567,6 +560,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -625,6 +619,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -689,6 +684,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -720,132 +716,6 @@
           },
           "srcfeature": false,
           "title": "Python"
-        },
-        "seneca-provider": {
-          "active": true,
-          "author": {
-            "name": "",
-            "url": ""
-          },
-          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
-          "comment": {
-            "line": "//"
-          },
-          "deps": {
-            "@seneca/doc": {
-              "active": true,
-              "kind": "dev",
-              "version": "^8.0.0"
-            },
-            "@seneca/env": {
-              "active": true,
-              "kind": "peer",
-              "version": ">=0.4"
-            },
-            "@seneca/maintain": {
-              "active": true,
-              "kind": "prod",
-              "version": "^0.1.0"
-            },
-            "@seneca/provider": {
-              "active": true,
-              "kind": "peer",
-              "version": ">=4"
-            },
-            "@types/node": {
-              "active": true,
-              "kind": "dev",
-              "version": "^24.0.0"
-            },
-            "seneca": {
-              "active": true,
-              "kind": "peer,dev",
-              "version": ">=3||>=4.0.0-rc2"
-            },
-            "seneca-entity": {
-              "active": true,
-              "kind": "peer",
-              "version": ">=26"
-            },
-            "seneca-msg-test": {
-              "active": true,
-              "kind": "dev",
-              "version": "^4.1.0"
-            },
-            "seneca-promisify": {
-              "active": true,
-              "kind": "peer",
-              "version": ">=3"
-            },
-            "typescript": {
-              "active": true,
-              "kind": "dev",
-              "version": "^5.4.5"
-            }
-          },
-          "ext": "ts",
-          "feature": {
-            "fullset": [],
-            "trim": true
-          },
-          "module": {
-            "goversion": "",
-            "name": "apimatic",
-            "package": "",
-            "path": ""
-          },
-          "name": "seneca-provider",
-          "origname": "",
-          "output": {
-            "adopt": true,
-            "path": "../../seneca/apimatic-provider",
-            "repo": "",
-            "sdkrel": "../../voxgig-sdk/apimatic-sdk"
-          },
-          "package": "@voxgig/sdkgen",
-          "phase": {
-            "agentguide": {
-              "active": false
-            },
-            "entity": {
-              "active": false
-            },
-            "feature": {
-              "active": false
-            },
-            "readme": {
-              "active": false
-            },
-            "test": {
-              "active": false
-            }
-          },
-          "publish": {
-            "registry": {
-              "active": false,
-              "name": "npm",
-              "package": "",
-              "state": "pending",
-              "url": "https://registry.npmjs.org",
-              "vault": {
-                "alias": "npm",
-                "env": "",
-                "recipe": "npm"
-              }
-            },
-            "tag": {
-              "active": true,
-              "prefix": "",
-              "vault": {
-                "alias": "github",
-                "recipe": "github"
-              },
-              "via": "port"
-            },
-            "version": "0.0.1"
-          },
-          "srcfeature": false,
-          "title": "Seneca Provider"
         },
         "ts": {
           "active": true,
@@ -889,6 +759,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -931,8 +802,5 @@
     }
   },
   "name": "apimatic",
-  "name-": "apimatic",
-  "name_": "apimatic",
-  "name__orig": "apimatic",
   "origin": "voxgig-sdk"
 }
