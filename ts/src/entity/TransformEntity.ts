@@ -44,7 +44,8 @@ class TransformEntity extends ApimaticEntityBase<Transform> {
     const {
       makeContext,
       done,
-      error,
+      // The registry name is `makeError`; `error` is the local alias.
+      makeError: error,
       featureHook,
       makePoint,
       makeRequest,
