@@ -66,6 +66,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "transform",
         ["op"] = {
           ["create"] = {
@@ -77,13 +81,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/transform",
-                ["parts"] = {
-                  "transform",
+                ["segments"] = {
+                  {
+                    ["lit"] = "transform",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "transform",
                 },
               },
             },

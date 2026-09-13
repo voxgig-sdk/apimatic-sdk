@@ -13,6 +13,7 @@ const { ApimaticEntityBase } = require('./ApimaticEntityBase')
 const { BaseFeature } = require('./feature/base/BaseFeature')
 
 
+
 const stdutil = new Utility()
 
 
@@ -22,6 +23,7 @@ class ApimaticSDK {
   _utility = new Utility()
   _features
   _rootctx
+  
 
   constructor(options) {
 
@@ -94,6 +96,8 @@ class ApimaticSDK {
     return this._utility.struct.clone(this._utility)
   }
 
+  
+
 
   async prepare(fetchargs) {
     const utility = this._utility
@@ -139,6 +143,8 @@ class ApimaticSDK {
         spec.headers[key] = uheaders[key]
       }
     }
+
+    
 
     // Apply SDK auth (apikey, auth prefix, etc.)
     const authResult = prepareAuth(ctx)
@@ -345,6 +351,7 @@ const SDK = ApimaticSDK
 module.exports = {
   stdutil,
   config,
+  
 
   BaseFeature,
   ApimaticEntityBase,

@@ -56,8 +56,10 @@ main: kit: entity: transform: {
         {
           method: "POST"
           orig: "/transform"
-          parts: [
-            "transform"
+          segments: [
+            {
+              lit: "transform"
+            }
           ]
           transform: {
             req: "`reqdata`"

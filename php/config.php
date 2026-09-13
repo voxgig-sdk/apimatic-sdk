@@ -92,6 +92,10 @@ class ApimaticConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'transform',
           'op' => [
             'create' => [
@@ -103,13 +107,18 @@ class ApimaticConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/transform',
-                  'parts' => [
-                    'transform',
+                  'segments' => [
+                    [
+                      'lit' => 'transform',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'transform',
                   ],
                 ],
               ],
