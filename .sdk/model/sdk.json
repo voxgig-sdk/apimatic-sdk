@@ -1,6 +1,15 @@
 {
+  "NAME": "APIMATIC",
+  "Name": "Apimatic",
   "def": "apimatic-transform-only.json",
   "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
     "def": {
       "desc": ""
     },
@@ -848,5 +857,8 @@
     }
   },
   "name": "apimatic",
+  "name-": "apimatic",
+  "name_": "apimatic",
+  "name__orig": "apimatic",
   "origin": "voxgig-sdk"
 }
