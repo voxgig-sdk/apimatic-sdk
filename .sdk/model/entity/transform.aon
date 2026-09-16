@@ -54,6 +54,12 @@ main: kit: entity: transform: {
       name: "create"
       points: [
         {
+          contract: {
+            id: "POST /transform"
+            json: "{\"operationId\":\"createTransformation\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"fileName\":{\"type\":\"string\"},\"format\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}},\"required\":[\"format\",\"url\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"downloadUrl\":{\"type\":\"string\"},\"format\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"The transformed API description\"}},\"security\":[{\"apiKeyAuth\":[]}],\"securitySchemes\":{\"apiKeyAuth\":{\"in\":\"header\",\"name\":\"authorization\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/transform"
           segments: [
