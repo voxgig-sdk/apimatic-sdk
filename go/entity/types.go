@@ -1,7 +1,7 @@
 // Typed models for the Apimatic SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,12 +14,6 @@ import (
 
 // Transform is the typed data model for the transform entity.
 type Transform struct {
-	DownloadUrl *string `json:"downloadUrl,omitempty"`
-	FileName *string `json:"fileName,omitempty"`
-	Format *string `json:"format,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Url string `json:"url"`
 }
 
 // TransformCreateData is the typed request payload for Transform.CreateTyped.

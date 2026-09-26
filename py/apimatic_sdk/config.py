@@ -176,6 +176,7 @@ def make_config():
             "base": "https://api.apimatic.io",
             "auth": {
                 "prefix": "",
+                "name": "authorization",
             },
             "headers": {
         "content-type": "application/json",
@@ -189,34 +190,40 @@ def make_config():
         "fields": [
           {
             "name": "downloadUrl",
+            "title": "Download Url",
             "type": "`$STRING`",
           },
           {
             "name": "fileName",
+            "title": "File Name",
             "type": "`$STRING`",
           },
           {
             "name": "format",
+            "title": "Format",
+            "type": "`$STRING`",
             "op": {
               "create": {
                 "req": True,
                 "type": "`$STRING`",
               },
             },
-            "type": "`$STRING`",
           },
           {
             "name": "id",
+            "title": "Id",
             "type": "`$STRING`",
           },
           {
             "name": "status",
+            "title": "Status",
             "type": "`$STRING`",
           },
           {
             "name": "url",
-            "req": True,
+            "title": "Url",
             "type": "`$STRING`",
+            "req": True,
           },
         ],
         "id": {
@@ -230,7 +237,6 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "POST",
                 "orig": "/transform",
@@ -239,14 +245,16 @@ def make_config():
                     "lit": "transform",
                   },
                 ],
-                "select": {},
+                "parts": [
+                  "transform",
+                ],
+                "rename": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "parts": [
-                  "transform",
-                ],
+                "args": {},
+                "select": {},
               },
             ],
           },

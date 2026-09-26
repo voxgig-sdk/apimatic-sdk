@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/apimatic",
+  "name": "@voxgig-sdk/apimatic-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the APIMatic Transformer public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [
@@ -23,7 +23,8 @@
   "types": "dist/ApimaticSDK.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "README.md"
   ],
   "scripts": {
     "pretest": "npm run build",

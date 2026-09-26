@@ -1,0 +1,86 @@
+# Entity: transform
+
+main: kit: entity: transform: {
+
+  alias: field: {}
+
+  fields: {
+    downloadUrl: {
+      h: "Download Url"
+      n: "downloadUrl"
+      r: false
+      t: "`$STRING`"
+    }
+    fileName: {
+      h: "File Name"
+      n: "fileName"
+      r: false
+      t: "`$STRING`"
+    }
+    format: {
+      h: "Format"
+      n: "format"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "transform"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /transform"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/transform"
+          s: [
+            {
+              lit: "transform"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

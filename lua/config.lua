@@ -147,6 +147,7 @@ local function make_config()
       base = "https://api.apimatic.io",
       auth = {
         prefix = "",
+        name = "authorization",
       },
       headers = {
         ["content-type"] = "application/json",
@@ -160,34 +161,40 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "downloadUrl",
+            ["title"] = "Download Url",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "fileName",
+            ["title"] = "File Name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "format",
+            ["title"] = "Format",
+            ["type"] = "`$STRING`",
             ["op"] = {
               ["create"] = {
                 ["req"] = true,
                 ["type"] = "`$STRING`",
               },
             },
-            ["type"] = "`$STRING`",
           },
           {
             ["name"] = "id",
+            ["title"] = "Id",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
+            ["title"] = "Status",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "url",
-            ["req"] = true,
+            ["title"] = "Url",
             ["type"] = "`$STRING`",
+            ["req"] = true,
           },
         },
         ["id"] = {
@@ -201,7 +208,6 @@ local function make_config()
             ["name"] = "create",
             ["points"] = {
               {
-                ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/transform",
@@ -210,14 +216,16 @@ local function make_config()
                     ["lit"] = "transform",
                   },
                 },
-                ["select"] = {},
+                ["parts"] = {
+                  "transform",
+                },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "transform",
-                },
+                ["args"] = {},
+                ["select"] = {},
               },
             },
           },

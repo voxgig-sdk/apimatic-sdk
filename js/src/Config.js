@@ -206,6 +206,7 @@ class Config {
 
     auth: {
       prefix: '',
+      name: 'authorization',
     },
 
     headers: {
@@ -214,9 +215,9 @@ class Config {
 
     entity: {
       
-      transform: {
-      },
-
+        transform: {
+        },
+  
     }
   }
 
@@ -226,34 +227,40 @@ class Config {
       "fields": [
         {
           "name": "downloadUrl",
+          "title": "Download Url",
           "type": "`$STRING`"
         },
         {
           "name": "fileName",
+          "title": "File Name",
           "type": "`$STRING`"
         },
         {
           "name": "format",
+          "title": "Format",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
-          },
-          "type": "`$STRING`"
+          }
         },
         {
           "name": "id",
+          "title": "Id",
           "type": "`$STRING`"
         },
         {
           "name": "status",
+          "title": "Status",
           "type": "`$STRING`"
         },
         {
           "name": "url",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Url",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "id": {
@@ -267,7 +274,6 @@ class Config {
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/transform",
@@ -276,14 +282,16 @@ class Config {
                   "lit": "transform"
                 }
               ],
-              "select": {},
+              "parts": [
+                "transform"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "transform"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }

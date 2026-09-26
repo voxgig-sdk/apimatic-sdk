@@ -151,6 +151,7 @@ func MakeConfig() map[string]any {
 			"base": "https://api.apimatic.io",
 			"auth": map[string]any{
 				"prefix": "",
+				"name": "authorization",
 			},
 			"headers": map[string]any{
 				"content-type": "application/json",
@@ -164,34 +165,40 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "downloadUrl",
+						"title": "Download Url",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "fileName",
+						"title": "File Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "format",
+						"title": "Format",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"title": "Status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
-						"req": true,
+						"title": "Url",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"id": map[string]any{
@@ -205,7 +212,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/transform",
@@ -214,14 +220,16 @@ func MakeConfig() map[string]any {
 										"lit": "transform",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"transform",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"transform",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

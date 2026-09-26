@@ -1,5 +1,5 @@
 {
-  "name": "voxgig-sdk/apimatic",
+  "name": "voxgig-sdk/apimatic-sdk",
   "description": "Unofficial generated PHP SDK for the APIMatic Transformer public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
   "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "apimatic"],
@@ -21,7 +21,7 @@
   },
   "autoload": {
     "files": ["apimatic_sdk.php"],
-    "classmap": ["core/", "entity/", "feature/", "types/", "utility/", "config.php", "features.php"]
+    "classmap": ["core/", "entity/", "feature/", "types/", "utility/", "config.php", "schema.php", "features.php"]
   },
   "autoload-dev": {
     "classmap": ["test/"]

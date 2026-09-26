@@ -120,6 +120,7 @@ declare class Config {
         base: string;
         auth: {
             prefix: string;
+            name: string;
         };
         headers: {
             "content-type": string;
@@ -132,23 +133,26 @@ declare class Config {
         transform: {
             fields: ({
                 name: string;
+                title: string;
                 type: string;
                 op?: undefined;
                 req?: undefined;
             } | {
                 name: string;
+                title: string;
+                type: string;
                 op: {
                     create: {
                         req: boolean;
                         type: string;
                     };
                 };
-                type: string;
                 req?: undefined;
             } | {
                 name: string;
-                req: boolean;
+                title: string;
                 type: string;
+                req: boolean;
                 op?: undefined;
             })[];
             id: {
@@ -161,19 +165,20 @@ declare class Config {
                     input: string;
                     name: string;
                     points: {
-                        args: {};
                         kind: string;
                         method: string;
                         orig: string;
                         segments: {
                             lit: string;
                         }[];
-                        select: {};
+                        parts: string[];
+                        rename: {};
                         transform: {
                             req: string;
                             res: string;
                         };
-                        parts: string[];
+                        args: {};
+                        select: {};
                     }[];
                 };
             };

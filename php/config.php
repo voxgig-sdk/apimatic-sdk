@@ -173,6 +173,7 @@ class ApimaticConfig
                 "base" => "https://api.apimatic.io",
                 "auth" => [
                     "prefix" => "",
+                    "name" => "authorization",
                 ],
                 "headers" => [
           'content-type' => 'application/json',
@@ -186,34 +187,40 @@ class ApimaticConfig
           'fields' => [
             [
               'name' => 'downloadUrl',
+              'title' => 'Download Url',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'fileName',
+              'title' => 'File Name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'format',
+              'title' => 'Format',
+              'type' => '`$STRING`',
               'op' => [
                 'create' => [
                   'req' => true,
                   'type' => '`$STRING`',
                 ],
               ],
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'status',
+              'title' => 'Status',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'url',
-              'req' => true,
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'req' => true,
             ],
           ],
           'id' => [
@@ -227,7 +234,6 @@ class ApimaticConfig
               'name' => 'create',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/transform',
@@ -236,14 +242,16 @@ class ApimaticConfig
                       'lit' => 'transform',
                     ],
                   ],
-                  'select' => [],
+                  'parts' => [
+                    'transform',
+                  ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'transform',
-                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],
